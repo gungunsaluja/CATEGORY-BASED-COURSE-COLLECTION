@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+  font-family: "Poppins", sans-serif;
+}
+.navbar{
+  box-shadow: 5px 8px 10px rgba(0, 0, 0, 0.908);
+  color:rgb(182, 107, 16)
+}
+.navbar h1
+{
+  color:rgb(228, 223, 223)
+}
+
+.card{
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.908);
+  border-bottom-left-radius: 1.5rem;
+  cursor: pointer;
+  
+}
+
+.card:hover{
+  transform: scale(1.02);
+  transition: all 1s;
+}
