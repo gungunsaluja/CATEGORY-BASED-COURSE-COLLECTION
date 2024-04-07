@@ -8,11 +8,13 @@ import Spinner from "./Components/Spinner"
 
 import "./App.css"
 const  App=()=> {
+  //side se jo pop up hoke aata h successful or failure ke unkoo toast khte hai
   // const [text, settext] = useState("")
   // function changehandler(event) {
   //   settext(() => event.target.value);
   //   console.log(text);
   // }
+  
   //note - usestate component agar state variable ki value change hoti h tw vo ui ko rerender karta h
 
   //jb app component(jis b component me useeffect likj=h re ho) render hochuka hoga tab useeffect hook execute hona chalu hogaa it can handle several side effects dom updation api calling
@@ -30,7 +32,7 @@ const  App=()=> {
   //   console.log("render only once");
   // },[])
 // -----------------------------------------------
-  // case 3=> on every render on particular dependencies whenever change occur in them..
+  // case 3=> first render +  on every render on particular dependencies whenever change occur in them..
   // basically jb b text change hoga tb effect run hoga
 
   // useEffect(()=>{
@@ -50,6 +52,9 @@ const  App=()=> {
   //in return section code will run for cleaning 
   //   }
   // },[text])
+  // /-----------------------------------------------------
+  // mounting -component dom par render hochuka h unmount ka mtlb component dom se remove ho chuka hai
+
 
   const [courses, setCourses] = useState(null)
   // To show loading icon while fetching data
@@ -69,7 +74,7 @@ const  App=()=> {
     } catch (error) {
       toast.error("something went wrong")
     }
-    setLoading(false) //loading image hatao , data aa chuka hai.. 
+    setLoading(false) // jab sara data aajayee loading image hatao , data aa chuka hai.. 
   }
 // Courses=["development","business","design","lifestyle"]
   useEffect(() => {
@@ -92,6 +97,7 @@ const  App=()=> {
 
       <div className="w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center items-center min-h-[50vh]">
          {
+          // loading ho ri h tw spinner dikhaoo varnma cards dikhao
           loading ? (<Spinner></Spinner>) : (<Cards courses={courses} category={category}></Cards>)
         }
       </div>

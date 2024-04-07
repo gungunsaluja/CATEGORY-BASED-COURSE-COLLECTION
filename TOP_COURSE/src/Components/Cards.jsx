@@ -13,7 +13,9 @@ export default function Cards({courses , category}) {
     function getCourses() {
         if(category==="All"){
         // Agar category all hai toh sara data show hoga 
-            Object.values(courses).forEach(array => {
+            // courses vale array me key se koii mtlb nhii h array milge values ka us array me or array pde hongee
+
+        Object.values(courses).forEach(array => {
                 array.forEach(courseData => {
                     allCourses.push(courseData);
                 })
@@ -35,6 +37,8 @@ const [likedCourses,setlikedCourses]=useState([]);
     return (
         <div className="flex flex-wrap justify-center gap-7 mb-4">
             {
+                //get course me ma har ek (course) ke lye card create karna chahta huu
+                
                 getCourses().map((course) => (
                     <Card key={course.id} course={course} likedCourses={likedCourses} setlikedCourses={setlikedCourses}/>
                 ))
