@@ -13,27 +13,32 @@ const  App=()=> {
   //   settext(() => event.target.value);
   //   console.log(text);
   // }
+  //note - usestate component agar state variable ki value change hoti h tw vo ui ko rerender karta h
 
+  //jb app component(jis b component me useeffect likj=h re ho) render hochuka hoga tab useeffect hook execute hona chalu hogaa it can handle several side effects dom updation api calling
+  // -----------------------------------------------------
   // for useEffect Case 1 => Run on every Render
   // jab bhi page render hoga useeffect wala hook chalega
 
   // useEffect(()=>{
   //   console.log("UI is rendering");
   // })
-
+// ---------------------------------------------------------
   // for case 2=> First time render. This hook runs only on first time when the page is rendered. Here we use dependency array.
-
+  // -------------------------------------------------------
   // useEffect(()=>{
   //   console.log("render only once");
   // },[])
-
+// -----------------------------------------------
   // case 3=> on every render on particular dependencies whenever change occur in them..
+  // basically jb b text change hoga tb effect run hoga
 
   // useEffect(()=>{
   //   console.log("text is changed");
   // },[text])
 
   // case 4 => To handle unmounting of a component (Unmounting is when a React component is removed from the DOM).
+  //basically whenever you want some side effects after rendering your current component then you need useEffect hook now what is side effect component ke normal flow of  execution ke aalawa koi or b task krana chahte ho us task ko naam h side effect and or us side effect ko handle karne ka tareeka h useeffect 
 
   // useEffect(() => {
   //   //add event listener
@@ -42,6 +47,7 @@ const  App=()=> {
   //   //Note once the listener is added it first executes the return statement then add another listener.
   //   return()=>{
   //     console.log("listener removed");
+  //in return section code will run for cleaning 
   //   }
   // },[text])
 
@@ -95,3 +101,4 @@ const  App=()=> {
 }
 
 export default App
+// kisi component pr side effect ka mtlb hota hai jb uske alawa  kar bakki par uska effect pde modifying the browser calling api
