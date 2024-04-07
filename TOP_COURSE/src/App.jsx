@@ -13,6 +13,11 @@ const  App=()=> {
   //   settext(() => event.target.value);
   //   console.log(text);
   // }
+  //basically whenever you want some side effects after rendering your current component
+  //then you need useEffect hook now what is side effect component ke normal flow of  execution ke aalawa koi or 
+  //b task krana chahte ho us 
+  //task ko naam h side effect and or us side effect ko handle karne ka tareeka h useeffect 
+
 
   // for useEffect Case 1 => Run on every Render
   // jab bhi page render hoga useeffect wala hook chalega
