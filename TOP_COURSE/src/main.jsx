@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     <App />
+{/*    To show every toast you you must make toast container */}
     <ToastContainer />
   </>
 )
