@@ -7,14 +7,16 @@ import { filterData, apiUrl } from "./data"
 import Spinner from "./Components/Spinner"
 
 import "./App.css"
-const  App=()=> {
+const App = () => {
   //side se jo pop up hoke aata h successful or failure ke unkoo toast khte hai
   // const [text, settext] = useState("")
   // function changehandler(event) {
   //   settext(() => event.target.value);
   //   console.log(text);
   // }
-  
+  // useeffect is used to manange sideeffects
+
+
   //note - usestate component agar state variable ki value change hoti h tw vo ui ko rerender karta h
 
   //jb app component(jis b component me useeffect likj=h re ho) render hochuka hoga tab useeffect hook execute hona chalu hogaa it can handle several side effects dom updation api calling
@@ -25,13 +27,13 @@ const  App=()=> {
   // useEffect(()=>{
   //   console.log("UI is rendering");
   // })
-// ---------------------------------------------------------
+  // ---------------------------------------------------------
   // for case 2=> First time render. This hook runs only on first time when the page is rendered. Here we use dependency array.
   // -------------------------------------------------------
   // useEffect(()=>{
   //   console.log("render only once");
   // },[])
-// -----------------------------------------------
+  // -----------------------------------------------
   // case 3=> first render +  on every render on particular dependencies whenever change occur in them..
   // basically jb b text change hoga tb effect run hoga
 
@@ -61,7 +63,7 @@ const  App=()=> {
   const [loading, setLoading] = useState(true)
   // To show filtered data of specific category.
   // filter me jis bhi button pe click krege uski category title ke through set hojayegi. 
-  const [category,setCategory]=useState(filterData[0].title)
+  const [category, setCategory] = useState(filterData[0].title)
 
   async function FetchData() {
     setLoading(true)//loading image dikhao
@@ -76,7 +78,7 @@ const  App=()=> {
     }
     setLoading(false) // jab sara data aajayee loading image hatao , data aa chuka hai.. 
   }
-// Courses=["development","business","design","lifestyle"]
+  // Courses=["development","business","design","lifestyle"]
   useEffect(() => {
     FetchData();
   }, []);
@@ -96,7 +98,7 @@ const  App=()=> {
       </div>
 
       <div className="w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center items-center min-h-[50vh]">
-         {
+        {
           // loading ho ri h tw spinner dikhaoo varnma cards dikhao
           loading ? (<Spinner></Spinner>) : (<Cards courses={courses} category={category}></Cards>)
         }

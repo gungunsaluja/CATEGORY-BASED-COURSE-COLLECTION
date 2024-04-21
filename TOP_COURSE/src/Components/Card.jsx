@@ -13,7 +13,7 @@ export default function Card({ course, likedCourses, setlikedCourses }) {
 
             setlikedCourses((prev) => prev.filter(cid => (cid !== course.id)));
             toast.warning(`${course.title} like removed`);
-            // prevlikcourse refers to all liked courses and now after filtering, the current course.id will be removed from prevlikedcourse
+            // prevlikedcourse refers to all liked courses and now after filtering, the current course.id will be removed from prevlikedcourse
         }
         else {
             //Jab course pehle se liked nahi hai.

@@ -3,8 +3,9 @@ import Card from "./Card"
 import { useState } from "react";
 export default function Cards({courses , category}) {
 
-    //The data within the api courses is in key value pairs. where object is courses. and kays are (business,design development ,....) theses are coursse category. Now  but we want only values (array of elements of the keys/object
-    //get courses is a funtion that retur an array of all the values in api
+    //The data within the api courses is in key value pairs. where object is courses. and keys are (business,design development ,....) these are course category. Now  but we want only values (array of elements of the keys/object
+    //get courses is a funtion that return an array of all the values in api
+    // a list of all courses received from api response
     
     
 
